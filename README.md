@@ -3,26 +3,33 @@
 Hybrid APP Sample
 ===================================
 
-This sample demonstrates how to use SMT/coded by ioinic2,typescript,cordova and some other function tips.</br>
+This sample demonstrates how to use SMT/coded by Angular2,ioinic2,typescript,cordova and some other function tips.</br>
 See below lists.
 
 Introduction
 ------------
 
 function:</br>
-1.login</br>
-2.slot check</br>
-3.problems that can take photos for upload</br> 
+1.Login service</br>
+2.Ping service</br>
+3.Wwitch language</br>
+4.Slot check</br>
+5.An error occured during operation that can take photos for upload</br> 
+6.SignalR supported by backend service,it can receive data and dr aw charts</br>
+7.define Configurations
+
+
 etc.....
 
  
 
 Pre-requisites
 --------------
-
+- Angular2
 - ioinic2
 - typescript
 - cordova
+- Backend service depended by you choose language,such like C#,JAVA...........
 
 Screenshots
 -------------
@@ -34,7 +41,7 @@ Screenshots
 Getting Started
 ---------------
 
-This sample uses the angular2 -cli build system. To build this project, use the
+This sample uses the command to build system. To build this project, use the
 
     "clean": "ionic-app-scripts clean"
     "build": "ionic-app-scripts build"
