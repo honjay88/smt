@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{"Home"|translate}}</ion-title>
+  </ion-navbar>
+ 
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>{{"Mslno"|translate}}</ion-label>
+      <ion-input type="text" #c (keyup.enter)="onMSL(c.value)" placeholder="Input Data ..." autofocus></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-row center>
+        <ion-col>
+          <div>{{"Wo"|translate}}:{{wo1}}</div>
+        </ion-col>
+        <ion-col>
+          <div>{{"Machine"|translate}}:{{ma1}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>{{"Input"|translate}}</ion-label>
+      <ion-input type="text" #b (keyup.enter)="onData(b.value); b.value=''" placeholder="Add new ..."></ion-input>
+    </ion-item>
+    <ion-item class="toolbar">
+      <ion-row>
+        <ion-col>
+          {{"Slot"|translate}}
+        </ion-col>
+        <ion-col>
+          {{"MaterialNo"|translate}}
+        </ion-col>
+        <ion-col>
+          {{"MaterialNo"|translate}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-list>
+</ion-header> 
+
+<ion-content>
+  <ion-list>
+    <ion-item style ="border-top: 0.5px solid !important;border-bottom: 0.5px solid !important;" [ngClass]="s.sColor == 1 ? 'error' : 'success'" *ngFor="let s of materialSlots2; let i =  index" (tap)="openModal(s)">
+      <ion-grid>
+        <ion-row style="border: 1px !important"> 
+          <ion-col>
+            <div>
+            {{s.sSlot}}
+              </div>
+          </ion-col>
+          <ion-col>
+                <div>
+            {{s.sMaterial}}
+                </div>
+          </ion-col>
+          <ion-col>
+                <div>
+            {{s.sMaterialName}}
+                </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list> 
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="toolbar" color="primary">
+    <ion-title>{{"Message"|translate}}:{{message}}</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+
+<!--<ion-label color="primary">{{"Slot"|translate}}</ion-label> -->

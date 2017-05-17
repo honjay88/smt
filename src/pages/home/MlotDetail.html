@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title> {{"MaterialInfo"|translate}}</ion-title>
+        <ion-buttons start>
+            <button (click)="dismiss()">
+            <ion-icon name="md-close"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="cellformat">
+    <ion-list>
+        <ion-item>
+            <ion-grid>
+                <ion-row left>
+                    <ion-col width-30>
+                        <div>
+                        {{"MaterialNo"|translate}}
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                            <div>
+                        {{firstParam.sMaterial}}
+                            </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row left>
+                    <ion-col width-30>
+                            <div>
+                        {{"Product"|translate}}
+                            </div>
+                    </ion-col>
+                    <ion-col>
+                            <div>
+                        {{firstParam.sMaterialName}}
+                            </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row left>
+                    <ion-col width-30>
+                            <div>
+                        {{"DateCode"|translate}}
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                            <div>
+                        {{firstParam.sLot}}
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <button ion-button block center (click)="dismiss()">{{"Close"|translate}}</button>
+  <!--  <h2>Add a Todo</h2>-->
+</ion-content>

@@ -1,0 +1,23 @@
+page-MlotDetail { 
+  .cellformat
+  {
+    ion-col div {
+      background-color: #F9FAFB;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      text-align: center;
+    }
+  }
+
+
+ /* h2 {
+    color: color($colors, primary);
+    font-size: 7.7rem;
+    margin:100px 0 0;
+    small {
+      color: lighten(color($colors, primary), 20%);
+      font-weight: normal;
+    }
+  }*/
+}

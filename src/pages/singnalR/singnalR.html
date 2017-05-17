@@ -1,0 +1,13 @@
+ <div>
+            <h3>SignalR w/ Angular 2 demo</h3>
+        </div>
+   <!--   [apiUrl]="'http://192.168.99.1:39876/tasks/long'">-->
+    <!--  [apiUrl]="'http://192.168.99.1:39876/tasks/short'">-->
+        <div>
+            <span>Connection state: {{connectionState$ | async}}</span>
+        </div>
+ <div class="flex-row"> 
+            <task-singnal class="flex"
+                [eventName]="'shortTask.status'"
+                [apiUrl]="'http://192.168.99.1:39876/tasks/short'"></task-singnal>
+        </div>

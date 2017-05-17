@@ -1,0 +1,10 @@
+  //.some-class1 { 
+  ion-content h2{
+    color: color($colors, dark);
+    font-size: 17.7rem;
+    margin:100px 0 0;
+    small {
+      color: lighten(color($colors, dark), 20%);
+      font-weight: normal;
+    }
+  }

@@ -1,0 +1,106 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation. (keyup)="updateList($event)" 
+
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle="RightMenu" end icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>{{"Login"|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-menu [content]="content" side="left" id="RightMenu">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>{{"Setup"|translate}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list border>
+      <ion-list-header>
+        <ion-label color="dark"> {{"Connection"|translate}} </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-icon name='wifi' item-left></ion-icon>
+        {{"DBServer"|translate}} 
+        <ion-icon name='sunny' item-right color="{{ dbConn == 'OK'?'secondary':'dark'}}"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon name='wifi' item-left></ion-icon>
+        {{"APServer"|translate}}
+        <ion-icon name='sunny' item-right color="secondary"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-left></ion-icon>
+         {{"ReConnect"|translate}}
+         <button ion-button color="primary" item-right menuClose="RightMenu" detail-none>
+           {{"ReConnect"|translate}}
+      </button>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+         <ion-label color="dark"> {{"Language"|translate}}</ion-label>
+      </ion-list-header>
+      <ion-item>    
+        <ion-icon name='color-wand' item-left></ion-icon>
+         
+            <ion-label color="dark"> {{"Language"|translate}}</ion-label>
+         
+            <ion-select item-right [(ngModel)]="lang" (ionChange)="onLangSelected($event)"  okText="{{'OK' | translate }}" cancelText="{{'Cancel' | translate }}">
+            
+                <ion-option *ngFor="let t of Langs1;let i=index"
+                            [value]="t.sKey"  
+                             selected="{{t.sKey == lang?'true':'false'}}">  
+                            {{t.sValue}}
+                </ion-option>
+            </ion-select> 
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+       <ion-item>
+      <button ion-button color="primary" item-right menuClose="RightMenu" detail-none>
+           {{"Close"|translate}} 
+      </button>
+        </ion-item>
+    </ion-list> 
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<ion-content padding>
+ <!-- <h2 class="some-class1">Add a Todo</h2>  (swipe)="OpenBarcode1()"-->
+  <div *ngIf="showLogin">
+    <ion-item>
+      <ion-input type="id" #c placeholder="{{'ID' | translate }}" [(ngModel)]="id"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-input type="password" placeholder="{{ 'Password' | translate }}" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </div>
+
+  <div *ngIf="!showLogin">
+    <ion-item>
+      <ion-input type="text" placeholder="{{ 'Name' | translate }}" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="id" placeholder="{{'ID' | translate }}" [(ngModel)]="id"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-input type="password" placeholder="{{ 'Password' | translate }}" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </div>
+  <button ion-button color="primary" full (click)="doLogin()">{{"Login"|translate}}</button>
+     <button (click)="testGet2()">Get Request</button>
+    <h3>Request results will be displayed here</h3>
+      <pre>{{requestResult }}</pre>
+     <!-- <pre>{{requestResult | json}}</pre>-->
+  <button ion-button color="primary" full (click)="doRegister()">Register</button>
+
+</ion-content>

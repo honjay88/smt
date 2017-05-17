@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+     {{"Setup"|translate}}   
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="dark">{{"Item"|translate}}</ion-label>
+    </ion-list-header> 
+<ion-item>
+  <ion-label> {{"Alert"|translate}} </ion-label>
+   <ion-toggle color="royal" checked="{{isAlertToggled}}" (ionChange)="alertAction($event)"></ion-toggle>
+</ion-item>
+
+<ion-item>
+  <ion-label> {{"Vibration"|translate}} </ion-label>
+ <ion-toggle color="royal" checked="{{isVibrationToggled}}" [(ngModel)]="isVibrationToggled" (ionChange)="vibrationAction($event)"></ion-toggle>
+</ion-item> 
+ <ion-item>
+  <ion-label color="dark">{{"Language"|translate}}</ion-label>
+    <ion-select (ionChange)="onLangSelected($event)" [(ngModel)]="lang" okText="{{'OK' | translate }}" cancelText="{{'Cancel' | translate }}">
+                <ion-option *ngFor="let t of Language;let i=index"
+                            [value]="t.sKey"  
+                            selected="{{t.sKey == lang?'true':'false'}}">  
+                            {{t.sValue}}
+                </ion-option>
+            </ion-select>
+  </ion-item>
+
+
+
+<ion-item>
+  <ion-label> {{"LocalNotification"|translate}} </ion-label>
+ <ion-toggle color="royal" checked="{{isNotifyToggled}}" [(ngModel)]="isNotifyToggled" (ionChange)="notifyAction($event)"></ion-toggle>
+</ion-item>
+
+<ion-item>
+     <ion-label> {{"Logout"|translate}} </ion-label>
+     <button ion-button outline item-right icon-left (click)="logout()">
+      <ion-icon name="star"></ion-icon>
+      {{"Logout"|translate}}  
+    </button>
+
+</ion-item> 
+
+  </ion-list>
+</ion-content>
