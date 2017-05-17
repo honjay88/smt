@@ -15,7 +15,7 @@ function:</br>
 3.Switch language</br>
 4.Slot check</br>
 5.An error occured during operation that can take photos for upload</br> 
-6.SignalR supported by backend service,it can receive data and dr aw charts</br>
+6.SignalR supported by backend service,it can receive data and draw charts</br>
 7.define Configurations
 
 
