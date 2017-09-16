@@ -361,7 +361,7 @@ ionViewWillEnter() {
       let loader = this.loadingCtrl.create({
         content: "Logging in..."
       });
-      loader.present();
+     // loader.present();
 
 
       this.usercreds = {
@@ -375,7 +375,7 @@ ionViewWillEnter() {
       this.auth.login('basic', this.usercreds).then((data) => {
         if (data) {
           console.log('ok i guess?');
-          loader.dismissAll();
+       //   loader.dismissAll();
           this.navCtrl.setRoot(TabsPage);
         }
         else {

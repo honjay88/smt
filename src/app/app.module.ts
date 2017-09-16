@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -40,6 +41,7 @@ export function HttpService2(http: Http) {
   ],
   imports: [
     IonicModule.forRoot(MyApp),
+    BrowserModule,
     SharedModule,
     HttpModule,
     TranslateModule.forRoot({

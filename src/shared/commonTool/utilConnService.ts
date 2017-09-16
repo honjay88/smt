@@ -51,23 +51,23 @@ export class UtilConnService {
       this._result2 = ciphertext;
       if(encodeType!=null)
       {
+          var zlib = require('zlib');
+          var buffer = new Buffer(ciphertext, 'base64');
            if (cryptType == null)
            {
                 return this._result2;
            }
 
            if(encodeType=='gzip')
-           {    
-                var zlib = require('zlib');
-                var buffer = new Buffer(ciphertext, 'base64');
+           {      
                 var contents = zlib.gunzipSync(buffer);
               //  console.log(contents.toString('utf-8'));
                 return contents.toString('utf-8');
            }
            else if(encodeType=='deflate')
            {
-                var zlib = require('zlib');
-                var buffer = new Buffer(ciphertext, 'base64');
+              //  var zlib = require('zlib');
+              //  var buffer = new Buffer(ciphertext, 'base64');
                 zlib.Deflate(buffer, function(err, dezipped) { 
                     return dezipped.toString('utf-8'); 
                 });   
@@ -85,8 +85,8 @@ export class UtilConnService {
            }
            else
            {
-              var buffer = new Buffer(this._result2, 'base64');
-              return buffer.toString('utf-8');
+              var buffer2 = new Buffer(this._result2, 'base64');
+              return buffer2.toString('utf-8');
            }
       } 
    }
